@@ -22,9 +22,9 @@ app.use((req, res, next) => {
   next();
 })
 
-app.use((req, res, next) => {
-  res.render('maintainese.hbs');
-})
+// app.use((req, res, next) => {
+//   res.render('maintainese.hbs');
+// })
 
 hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear();
@@ -61,4 +61,4 @@ app.get('/bad', (req, res) => {
   });
 })
 
-app.listen(port, ()=> console.log(`Server is on port ${prot}.`));
+app.listen(port, ()=> console.log(`Server is on port ${port}.`));
