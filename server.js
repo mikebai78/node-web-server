@@ -34,15 +34,24 @@ hbs.registerHelper('screamIt', (text) => {
 })
 
 app.get('/', (req, res) => {
-  res.render('index.hbs',{
+  res.render('home.hbs',{
     pageTitle: 'Home',
     welcomeMessage: 'This is your home',
     content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   })
 });
 
+app.get('/index', (req, res) => {
+  res.render('index.hbs',{
+    pageTitle: 'Index',
+    sitemap: 'This is the index',
+    content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  })
+});
+
 app.get('/contact', (req, res) => {
   res.render('contact.hbs', {
+    pageTitle: 'Contact',
     name: 'Andrew',
     email: 'andrew@g.com'
   })
